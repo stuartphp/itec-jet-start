@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 class Users extends Component
 {
     use WithPagination;
+
     public $sortBy = 'name';
     public $searchTerm='';
     public $sortAsc = true;
@@ -47,6 +48,7 @@ class Users extends Component
             })
             ->orderBy($this->sortBy, $this->sortAsc ? 'ASC' : 'DESC')
             ->paginate($this->pageSize);
+
         $data['headers'] = [
             ['name'=>'Name', 'sortable'=>'name'],
             ['name'=>'Email', 'sortable'=>'email'],
